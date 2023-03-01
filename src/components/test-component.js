@@ -1,3 +1,1 @@
-export default class ComponentTest {
-
-}
+export class ComponentTest {}

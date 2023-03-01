@@ -5,3 +5,8 @@ export const worldDefs = [
     SystemTest,
     ComponentTest
 ]
+
+module.exports = {
+    SystemTest,
+    ComponentTest
+}

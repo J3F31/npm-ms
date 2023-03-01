@@ -1,11 +1,10 @@
 {
   "name": "@j3f3/ms",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "version": "sh version.sh"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

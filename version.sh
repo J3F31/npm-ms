@@ -34,7 +34,7 @@ Commit() {
     git commit -m "$COMMIT_MSG"
     git push -f git@github.com:J3F31/npm-ms.git master
 
-    # bash npm version $NEW_VERSION
+    bash npm version $NEW_VERSION
 }
 AskConfirm() {
     if [ "$COMMIT_MSG" == "" ]; then

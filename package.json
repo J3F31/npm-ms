@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/J3F31/npm-ms/issues"
   },
-  "homepage": "https://github.com/J3F31/npm-ms#readme"
+  "homepage": "https://github.com/J3F31/npm-ms#readme",
+  "dependencies": {
+    "@lastolivegames/becsy": "^0.14.3"
+  }
 }

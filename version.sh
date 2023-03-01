@@ -11,7 +11,7 @@ NEW_VERSION=""
 #Help
 ########################################################################
 Help() {
-    echo "${italic}npm run version [option] [message]${normal}"
+    echo "${italic}npm run version [option] {message}${normal}"
     echo
     echo "${bold}Version:${normal}"
     echo    "current    $VERSION"
@@ -79,8 +79,4 @@ case $1 in
         echo "Not a feature yet";;
     release)
         echo "Not a feature yet";;
-    *)
-        echo "Not an option! Here is some help..."
-        echo
-        Help
 esac

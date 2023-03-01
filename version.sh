@@ -11,7 +11,7 @@ NEW_VERSION=""
 #Help
 ########################################################################
 Help() {
-    echo "${italic}npm run version [option] {message}${normal}"
+    echo "${italic}npm run version [option] [message]${normal}"
     echo
     echo "${bold}Version:${normal}"
     echo    "current    $VERSION"
@@ -31,18 +31,16 @@ Help() {
 Commit() {
     git init
     git add -A
-
-    if [ "$COMMIT_MSG" == "" ]; then
-        git commit
-    else
-        git commit -m "$COMMIT_MSG"
-    fi
-
+    git commit -m "$COMMIT_MSG"
     git push -f git@github.com:J3F31/npm-ms.git master
 
     # bash npm version $NEW_VERSION
 }
 AskConfirm() {
+    if [ "$COMMIT_MSG" == "" ]; then
+        read -p "Please enter a commit description: " dsc
+        COMMIT_MSG=$dsc
+    fi
     while true; do
         read -p "Commit with description [$COMMIT_MSG] and version [$NEW_VERSION]? (y/n)" yn
         case $yn in

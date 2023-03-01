@@ -1,11 +1,12 @@
-#!/bin/bash -h
+#!/bin/bash
 ########################################################################
 #Variables
 ########################################################################
 bold=$(tput bold)
 normal=$(tput sgr0)
 VERSION=$(node -p -e "require('./package.json').version")
-COMMIT_MSG=""
+COMMIT_MSG=$2
+NEW_VERSION=""
 #Help
 ########################################################################
 Help()
@@ -28,8 +29,26 @@ Help()
 }
 #Functions
 ########################################################################
-EditRepo() {
+Commit() {
     git init
+    git add -A
+    git commit -m $COMMIT_MSG
+    git push -f git@github.com:J3F31/npm-ms.git master
+
+    # bash npm version $NEW_VERSION
+}
+AskConfirm() {
+    while true; do
+        read -p "Commit with description [$COMMIT_MSG] and version [$NEW_VERSION?]? (y/n)" yn
+        case $yn in
+            y)
+                Commit; break;;
+            n)
+                exit;;
+            *)
+                echo "Type y for Yes and n for No.";;
+        esac
+    done
 }
 Version() {
     IFS='.' read -ra arr <<< $VERSION
@@ -37,7 +56,7 @@ Version() {
     b=$(( ${arr[1]} + $2 ))
     c=$(( ${arr[2]} + $3 ))
     NEW_VERSION="$a.$b.$c"
-    bash npm version $NEW_VERSION
+    AskConfirm
 }
 #Main
 ########################################################################
@@ -61,16 +80,3 @@ case $1 in
         echo
         Help
 esac
-if $2 = "-m"; then
-    echo $3
-fi
-
-
-# echo $1  
-
-git init
-git add -A
-git commit -m 'New Version'
-git push -f git@github.com:J3F31/IWP.git master:gh-pages
-
-# VERSION=$(node -p -e "require('./package.json').version")

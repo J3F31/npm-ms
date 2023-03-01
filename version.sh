@@ -2,6 +2,7 @@
 ########################################################################
 #Variables
 ########################################################################
+italic=$(tput sitm)
 bold=$(tput bold)
 normal=$(tput sgr0)
 VERSION=$(node -p -e "require('./package.json').version")
@@ -9,10 +10,8 @@ COMMIT_MSG=$2
 NEW_VERSION=""
 #Help
 ########################################################################
-Help()
-{
-   # Display Help
-    echo "${bold}This is a script to push to git and update the package version.${normal}"
+Help() {
+    echo "${italic}npm run version [option] {message}${normal}"
     echo
     echo "${bold}Version:${normal}"
     echo    "current    $VERSION"
@@ -32,14 +31,20 @@ Help()
 Commit() {
     git init
     git add -A
-    git commit -m $COMMIT_MSG
+
+    if [ "$COMMIT_MSG" == "" ]; then
+        git commit
+    else
+        git commit -m "$COMMIT_MSG"
+    fi
+
     git push -f git@github.com:J3F31/npm-ms.git master
 
     # bash npm version $NEW_VERSION
 }
 AskConfirm() {
     while true; do
-        read -p "Commit with description [$COMMIT_MSG] and version [$NEW_VERSION?]? (y/n)" yn
+        read -p "Commit with description [$COMMIT_MSG] and version [$NEW_VERSION]? (y/n)" yn
         case $yn in
             y)
                 Commit; break;;

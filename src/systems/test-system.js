@@ -4,8 +4,8 @@ export class SystemTest extends System {
     #entities = this.query(q => q.added.with(ComponentTest).read)
 
     execute() {
-        for (let entity of this.#entities.added) {
-            console.log("An entity with ComponentTest was added!")
+        for (let e of this.#entities.added) {
+            console.log('New entity added!!!')
         }
     }
 }

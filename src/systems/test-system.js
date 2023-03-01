@@ -1,6 +1,6 @@
 import { ComponentTest } from "../components/test-component";
 
-export class SystemTest extends System {
+export default class SystemTest extends System {
     #entities = this.query(q => q.added.with(ComponentTest).read)
 
     execute() {

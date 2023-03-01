@@ -1,11 +1,7 @@
 import ComponentTest from "./components/test-component";
 import SystemTest from "./systems/test-system";
 
-export const defs = [
+export default {
     SystemTest, 
     ComponentTest
-]
-
-export default {
-    defs
 }

@@ -1,0 +1,21 @@
+{
+  "name": "@j3f3/ms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "sh version.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J3F31/npm-ms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J3F31/npm-ms/issues"
+  },
+  "homepage": "https://github.com/J3F31/npm-ms#readme"
+}

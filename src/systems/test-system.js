@@ -8,6 +8,5 @@ export class SystemTest extends System {
     initialize() {
         console.log("Testing a component!!!")
         this.test.value = 2
-        console.log(this.test.value)
     }
 }

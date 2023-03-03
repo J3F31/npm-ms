@@ -5,6 +5,6 @@ export class SystemCreateScene extends System {
     scene = this.singleton.read(ComponentBabylonScene)
 
     initialize() {
-        this.scene.value = undefined
+        // this.scene.value = 
     }
 }

@@ -6,7 +6,6 @@ import { SystemTest } from "./systems/test-system";
 export const worldDefs = [
     ComponentTest,
     ComponentBabylonScene,
-
     SystemTest,
     SystemCreateScene
 ]

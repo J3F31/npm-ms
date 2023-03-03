@@ -7,5 +7,5 @@ export class ComponentTest {
     /**
 	 * @type {number}
 	 */
-	value = 0
+	value = 1
 }

@@ -1,12 +1,13 @@
 import { ComponentTest } from "../components/test-component"
 import { System } from "@lastolivegames/becsy";
+import { ComponentBabylonScene } from "../components/babylon-scene";
 
 export class SystemTest extends System {
-    #entities = this.query(q => q.added.with(ComponentTest).read)
+    test = this.singleton.write(ComponentTest)
 
-    execute() {
-        for (let e of this.#entities.added) {
-            console.log('New entity added!!!')
-        }
+    initialize() {
+        console.log("Testing a component!!!")
+        this.test.value = 2
+        console.log(this.test.value)
     }
 }

@@ -5,7 +5,7 @@ export class ComponentBabylonScene {
         value: Type.weakObject
     }
     /**
-	 * @type {Scene}
+	 * @type {any}
 	 */
 	value = undefined
 }

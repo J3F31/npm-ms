@@ -6,6 +6,5 @@ export class SystemCreateScene extends System {
 
     initialize() {
         this.scene.value = undefined
-        console.log('')
     }
 }

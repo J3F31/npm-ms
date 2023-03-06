@@ -3,9 +3,20 @@
 // import entityDefs from './config.json'
 // export * from './ecs-defs'
 
-export * from './components/test-component'
-export * from './systems/test-system'
+export * from './Skybox/skybox-component'
+export * from './Skybox/create-skybox-system'
 
+export * from './Scene/babylon-scene-component'
+export * from './Scene/create-scene-system'
+
+export * from './Mesh/babylon-mesh-component'
+export * from './Mesh/options-babylon-mesh'
+export * from './Mesh/create-mesh-system'
+
+export * from './Transforms/position-component'
+
+export * from './Camera/babylon-camera-component'
+export * from './Camera/create-camera-system'
 
 
 // const worldRef = await World.create({

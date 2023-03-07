@@ -2,6 +2,8 @@ import { System } from "@lastolivegames/becsy";
 import { ComponentScene } from "../Scene/babylon-scene-component";
 import { ComponentPosition } from "../Transforms/position-component";
 import { ComponentBabylonMesh } from "./babylon-mesh-component";
+import { optionsBabylonMesh } from "./options-babylon-mesh";
+import { MeshBuilder } from "@babylonjs/core";
 
 export class SystemCreateMesh extends System {
     #entities = this.query(q => q.added.with(ComponentBabylonMesh).write.using(ComponentPosition).read)

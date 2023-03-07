@@ -3,8 +3,7 @@
 // import entityDefs from './config.json'
 // export * from './ecs-defs'
 
-export * from './Skybox/skybox-component'
-export * from './Skybox/create-skybox-system'
+export * from './Skybox/index'
 
 export * from './Scene/babylon-scene-component'
 export * from './Scene/create-scene-system'

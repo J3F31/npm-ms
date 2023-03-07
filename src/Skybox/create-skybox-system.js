@@ -6,12 +6,12 @@ import { ComponentPosition } from "../Transforms/position-component";
 import { ComponentSkybox } from "./skybox-component";
 
 export class SystemCreateSkybox extends System {
-    #entities = this.query(q => q.added.with(ComponentSkybox).read)
+    #entities = this.query(q => q.added.with(ComponentSkybox, ComponentBabylonMesh).read)
     #scenes = this.query(q => q.added.with(ComponentScene).read)
 
     constructor() {
         super()
-        this.schedule(s => s.afterWritersOf(ComponentScene))
+        this.schedule(s => s.afterWritersOf(ComponentScene, ComponentBabylonMesh))
     }
 
     execute() {
@@ -21,8 +21,8 @@ export class SystemCreateSkybox extends System {
             const meshRead = entity.read(ComponentBabylonMesh)
             const entityRead = entity.read(ComponentSkybox)
             console.log('New entity ComponentSkybox added with name: ', 'name')
-
-            const skybox = MeshBuilder.CreateBox('name', {size: 10}, sceneRead.value)
+            meshRead.mesh.scaling.set(10, 10, 10)
+            // const skybox = MeshBuilder.CreateBox('name', {size: 10}, sceneRead.value)
             // skybox.position.set(e.position[0], e.position[1], e.position[2])
             const skyboxMat = new StandardMaterial('name', sceneRead.value)
             skyboxMat.backFaceCulling = false
@@ -31,7 +31,7 @@ export class SystemCreateSkybox extends System {
                 entityRead.assets[0], entityRead.assets[1], entityRead.assets[2], entityRead.assets[3], entityRead.assets[4], entityRead.assets[5]
             ], sceneRead.value, true)
             skyboxMat.reflectionTexture.coordinatesMode = Texture.SKYBOX_MODE
-            skybox.material = skyboxMat
+            meshRead.mesh.material = skyboxMat
         }
     }
 }

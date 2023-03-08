@@ -1,5 +1,5 @@
-// import {World, Type, System} from '@lastolivegames/becsy'
-// import {worldDefs} from './ecs-defs'
+//import {World, Type, System} from '@lastolivegames/becsy'
+//import {worldDefs} from './ecs-defs'
 // import entityDefs from './config.json'
 // export * from './ecs-defs'
 
@@ -18,9 +18,9 @@ export * from './Camera/babylon-camera-component'
 export * from './Camera/create-camera-system'
 
 
-// const worldRef = await World.create({
-//     defs: [worldDefs]
-// })
+//const worldRef = await World.create({
+//    defs: [worldDefs]
+//})
 
 // const findComponentInWorldDefs = (id) => {
 //     let component = undefined;
@@ -49,8 +49,8 @@ export * from './Camera/create-camera-system'
 //     }
 // })
 
-// const run = () => {
-//     worldRef.execute();
-//     requestAnimationFrame(run);
-// }
-// run();
+//const run = () => {
+//    worldRef.execute();
+//    requestAnimationFrame(run);
+//}
+//run();

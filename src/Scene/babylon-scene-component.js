@@ -2,10 +2,10 @@ import { Type } from "@lastolivegames/becsy";
 
 export class ComponentScene {
     static schema = {
-        value: {type: Type.weakObject, default: undefined}
+        value: {type: Type.int16, default: undefined}
     }
     /**
-     * @type {Scene}
+     * @type {number}
      */
-    value = undefined
+    value = 0
 }

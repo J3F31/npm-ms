@@ -1,7 +1,7 @@
 import { System } from '@lastolivegames/becsy'
 import { CTest } from './CTest'
 
-export class SystemWrite extends System {
+export class STest extends System {
     test = this.singleton.write(CTest)
 
     initialize() {

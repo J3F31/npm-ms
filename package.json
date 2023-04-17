@@ -4,7 +4,7 @@
     "description": "",
     "main": "src/index.js",
     "scripts": {
-        "version": "sh version.sh",
+        "version": "./version.sh",
         "devServer": "npx webpack serve --mode=development"
     },
     "repository": {

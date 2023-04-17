@@ -1,6 +1,6 @@
 {
     "name": "@j3f3/ms",
-    "version": "0.0.29",
+    "version": "0.1.29",
     "description": "",
     "main": "src/index.js",
     "scripts": {

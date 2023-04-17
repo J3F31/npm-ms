@@ -1,5 +1,43 @@
 {
     "entities": {
-        
+        "Camera": {
+            "ComponentName": {"value": "MainCamera"},
+            "ComponentCamera": {},
+            "ComponentBabylonNode": {},
+            "ComponentPosition3D": {},
+            "ComponentEulerRotation": {"x": 0, "y": 0, "z": 0},
+            "ComponentLookAround": {"lookVelocityX": 1, "lookVelocityY": 1},
+            "ComponentCameraZoom": {},
+            "ComponentZoomVelocity": {"value": 1}
+        },
+        "Waypoint2": {
+            "prefab": "waypoint",
+            "ComponentCurrentWaypoint": {},
+            "ComponentName": {"value": "scene2"},
+            "ComponentWaypoint": {"cameraPositionX": -3.52992685, "cameraPositionY": 1.65, "cameraPositionZ": -21.41283404},
+            "ComponentPosition3D": {"x": -3.52992685, "y": 0, "z": -21.41283404}
+        },
+        "Waypoint3": {
+            "prefab": "waypoint",
+            "ComponentName": {"value": "scene3"},
+            "ComponentWaypoint": {"cameraPositionX": -6.52992072, "cameraPositionY": 1.65, "cameraPositionZ": -16.11282777},
+            "ComponentPosition3D": {"x": -6.52992072, "y": 0, "z": -16.11282777}
+        },
+        "Cubemap2": {
+            "ComponentEnvironmentCubemap": {"name": "scene2", "projectionPositionX": -3.52992685, "projectionPositionY": 1.65, "projectionPositionZ": -21.41283404}
+        },
+        "Cubemap3": {
+            "ComponentEnvironmentCubemap": {"name": "scene3", "projectionPositionX": -6.52992072, "projectionPositionY": 1.65, "projectionPositionZ": -16.11282777}
+        }
+    },
+    "prefabs": {
+        "waypoint": {
+            "ComponentName": {"value": "waypoint prefab"},
+            "ComponentWaypoint": {"cameraPositionX": 1, "cameraPositionY": 1, "cameraPositionZ": 1},
+            "ComponentPosition3D": {"x": 1, "y": 1, "z": 1},
+            "ComponentEulerRotation": {"x": 1.570796326794897, "y": 0, "z": 0},
+            "ComponentHotspot": {},
+            "ComponentRingHotspot": {"type": 0, "addHoloGlow": true, "color": [0, 1, 1]}
+        }
     }
 }

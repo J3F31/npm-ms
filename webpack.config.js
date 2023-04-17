@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
 	entry: './src/index',
@@ -10,7 +11,8 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'Babylon ECS'
-		})
+		}),
+		new MiniCssExtractPlugin()
 	],
 	experiments: {
 		topLevelAwait: true
@@ -18,14 +20,33 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(fx|glb|gltf|bin|jpg|jpeg|png)$/i,
-				loader: 'file-loader',
-				options: {
-					context: 'src',
-					name: '[path][name].[ext]',
-				},
+				test: /\.css$/i,
+				use: [
+					MiniCssExtractPlugin.loader, 
+					'css-loader'
+				],
 			},
+			{
+				test: /\.(jpe?g|png|gif|svg|ico|mp4|m4a)$/i,
+				type: 'asset/resource'
+			},
+			{
+				test: /\.(glb|gltf|bin|manifest|obj|mtl)$/i,
+				type: 'asset/resource',
+				generator: {
+					filename: c => {
+						return c.filename.replace('src/', '')
+					}
+				}
+			}
 		],
+	},
+	cache: {
+		type: 'filesystem',
+	},
+	performance: {
+		maxEntrypointSize: 5120000,
+		maxAssetSize: 5120000
 	},
 	devServer: {
 		compress: true,

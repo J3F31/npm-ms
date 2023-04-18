@@ -40,11 +40,20 @@ See more in [becsy docs](https://lastolivegames.github.io/becsy/)
 
 ## Test project
 
-
+tbd
 
 ## Dependencies
 
 This package is using `@babylonjs/core` and `@lastolivegames/becsy`. Update the versions of these in `package.json` if necessary.
+```
+"dependencies": {
+    "@babylonjs/core": "^5.47.0",
+    "@babylonjs/gui": "^5.47.0",
+    "@babylonjs/inspector": "^5.46.0",
+    "@babylonjs/loaders": "^5.22.0",
+    "@lastolivegames/becsy": "^0.15.4"
+}
+```
 
 ## Versioning
 
@@ -68,6 +77,11 @@ A version summary of all past updates is visible in `version.md`.
 > This section is about how to use the package in a new project.
 
 ## Setup
+
+This command will add `@moyosa/spaces` to the project dependencies. Specify the version number if necessary.
+```
+npm i git+https://git@192.168.0.11/Moyosa/bjs-spaces-npm#main|{version}
+```
 
 ## ECS Imports
 

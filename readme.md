@@ -21,9 +21,9 @@ For a detailed overview of the modules check out [this figma file](https://www.f
 | Component | A component is an object that can store data but should have no behavior. |
 | System    | Systems are used to transform data stored on the components. |
 | Entity    | An entity is an object that has a unique ID, very much like a JavaScript object. Its purpose is to group components together; it may have up to one component of each type. |
-| Prefab    | A prefab is the default form of a specific entity. Entities with a prefab reference will take any component and value missing from the prefab. |
+| Prefab    | A prefab is a reusable element. Entities can take components from prefabs, and overwrite the component values with their own. |
 | World     | A world is basically a container for entities, components and systems, and you'll usually want to have exactly one in your application. |
-s
+
 See more in [becsy docs](https://lastolivegames.github.io/becsy/)
 
 | Terms     | Description |
@@ -40,34 +40,43 @@ See more in [becsy docs](https://lastolivegames.github.io/becsy/)
 
 ## Test project
 
-tbd
+Coming soon.
 
 ## Dependencies
 
 This package is using `@babylonjs/core` and `@lastolivegames/becsy`. Update the versions of these in `package.json` if necessary.
-```
-"dependencies": {
-    "@babylonjs/core": "^5.47.0",
-    "@babylonjs/gui": "^5.47.0",
-    "@babylonjs/inspector": "^5.46.0",
-    "@babylonjs/loaders": "^5.22.0",
-    "@lastolivegames/becsy": "^0.15.4"
-}
-```
 
-## Versioning
+</details>
+
+<details>
+<summary style="font-size: 30px; font-weight: bold;"> Versioning </summary>
+
+## Version script
 
 The `version.sh` script saves different versions of the code package.
 Use semantic versioning and add a description to clarlify what the new version is for.
 ```
 npm run version [option] {message}
 ```
-In the [option] argument use "major" for a full release, "minor" for a specific function implementation and "patch" for small edits.
+
+In the `[option]` argument use `major` for a full release, `minor` for a specific function implementations or `patch` for small fixes.
 Follow with a meaningful commit description in the {message} argument.
+Remember to write a meaningful version commit message inside quotes. 
+If you don't provide a message you will be prompted to write one, this prompt does not require quotes.
+Here is an example of how to use the `version.sh` script.
+```
+npm run version patch "This is a patch update!"
+```
+
+For an overview of the version syntax you can try the help command.
 ```
 npm run version help
 ```
+
+## Version summary
+
 A version summary of all past updates is visible in `version.md`.
+It includes a list of all commit titles and descriptions within each version.
 
 </details>
 
@@ -78,9 +87,8 @@ A version summary of all past updates is visible in `version.md`.
 
 ## Setup
 
-This command will add `@moyosa/spaces` to the project dependencies. Specify the version number if necessary.
 ```
-npm i git+https://git@192.168.0.11/Moyosa/bjs-spaces-npm#main|{version}
+npm i git+https://git@192.168.0.11/Moyosa/bjs-spaces-npm#main
 ```
 
 ## ECS Imports
@@ -129,9 +137,11 @@ Create a `config.json` file in the src folder with this structure. Add specific 
 },
 ```
 
-# Waypoiny entity
+# Waypoint entity
 
 > Add `"ComponentCurrentWaypoint": {}` to only one **Waypoint Entity**. This will define the starting position.
+Add `"ComponentLookAt": {"targetX": 0, "targetY": 0, "targetZ": 0}` to specify a look target for the camera after clicking on a waypoint.
+The `"ComponentName": {"value": ""}` defines the name for the waypoint element, but also the file name for the environment renders.
 
 ```
 "Waypoint": {

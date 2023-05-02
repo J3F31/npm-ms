@@ -1,0 +1,18 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: npm-ms
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Jero
+    family-names: Eyras
+repository-code: 'https://github.com/J3F31/npm-ms'
+abstract: Test project using shell for version control
+keywords:
+  - npm
+  - shell
+license: ISC
